@@ -1,6 +1,6 @@
 clear variables
 
-file = 'Lift1.csv'; % Reads in csvfile of collected data
+file = 'Lift3.csv'; % Reads in csvfile of collected data
 
 data = transpose(csvread(file));
 
@@ -138,7 +138,7 @@ xlabel('Frame')
 ylabel('Acceleration')
 end
 
-if (OFF)
+if (ON)
 figure(2)
 plot(n,Ax,n,Ay,n,Az)
 legend('X','Y','Z')
@@ -153,16 +153,16 @@ title('Barbell Acceleration Full')
 legend('Vertical','Horizontal')
 
 
-if (OFF)
+if (ON)
 figure(3)
-plot(n,accel_mag(S:E))
+plot(n(S:E),accel_mag(S:E))
 title('Acceleration Magnitude')
 xlabel('Frame')
 end
 
-if (OFF)
+if (ON)
 figure(4)
-plot(n,Vert_Acceleration,n,Hor_Acceleration)
+plot(n(S:E),Vert_Acceleration,n(S:E),Hor_Acceleration)
 title('Barbell Acceleration Profile')
 legend('Vertical','Horizontal')
 xlabel('Frame [Start - MBV]')
@@ -170,15 +170,15 @@ ylabel('Acceleration (m/s^2')
 end
 
 
-if (OFF)
+if (ON)
 figure(5)
 plot(n(S:E),Gz(S:E))
 title('Sensor Orientation')
 end
 
-if (OFF)
+if (ON)
 figure(6)
-plot(pull_index,Vert_Acceleration)
+plot(PULL_INDEX,Vert_Acceleration)
 title('Vertical Acceleration')
 xlabel('Frame')
 end
